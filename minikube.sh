@@ -38,3 +38,30 @@ minikube dashboard
 
 minikube dashboard --url
 
+#kubectl
+#
+$#install kubectl
+#
+kubectl version
+kubectl version --client
+kubectl options
+kubectl describe services
+
+#criar um novo deploy
+kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.10 deployment.apps/hello-minikube created 
+
+#abrir outto terminal e abrir dashboard
+minikube dashboard
+
+#Expor(Abrir) a porta para acesso remoto
+kubectl expose deployment hello-minikube --type=NodePort --port=8080
+
+#Exibir Pods
+kubectl get pod
+
+#Encontrar a UEL de acesso da aplicação
+minikube service hello-minikube --url
+
+#deletando serviços
+kubectl delete services hello-minikube
+kubectl delete deployment hello-minikube
